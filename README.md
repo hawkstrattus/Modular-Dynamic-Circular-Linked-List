@@ -1,7 +1,10 @@
 /*
 Author: Perengrine
+
 Purpose: Modular Double Circular Linked List
-Dependancies: stdbool.h (to get proper return values). Struct Definitions need to be included in the header file
+
+Dependancies: stdbool.h (to get proper return values)
+
 Examples: (Note that CreateList must always be used first and DeleteList must ALWAYS be used before termination of a program) (EVERY LIST MUST BE DELETED TO FREE THE MEMORY)
 
 	Function:	CreateList(int NodeCount, const char* ListID)
@@ -18,7 +21,7 @@ Examples: (Note that CreateList must always be used first and DeleteList must AL
 
 	Function:	SetNodeData(struct NodeManager*, int position, void* data);
 	Example:	int MyDataIWantToStoreInANode = 432
-				    bool SuccessOnTrueFailiureOnFalse = SetNodeData(MyListManager, 7, &MyDataIWantToStoreInANode);
+			bool SuccessOnTrueFailiureOnFalse = SetNodeData(MyListManager, 7, &MyDataIWantToStoreInANode);
 
 	Function:	EmptyNodeData(struct NodeManager*, int position);
 	Example:	bool SuccessOnTrueFailiureOnFalse = EmptyNodeData(MyListManager, 7);
