@@ -50,39 +50,39 @@ Examples: (Note that CreateList must always be used first and DeleteList must AL
 
 struct Node  				// the struct containing all the information a Node will store
 {
-	void* data;				// dynamically allocated variable to store strings
+	void* data;			// dynamically allocated variable to store strings
 	int position;			// node position in list
 	struct Node* next;		// the next node in list 0 being all the way at the left, next would point to 1 on the right, if tail node, this node will point to head
 	struct Node* prev;		// the previous node in the list. If this node is the head node, it will point to the tail
 };
 
-struct NodeManager  		// this is the wrapper for all nodes in an instance of NodeManager. Each array of nodes (Determined at list creation) is managed through this
+struct NodeManager  			// this is the wrapper for all nodes in an instance of NodeManager. Each array of nodes (Determined at list creation) is managed through this
 {
 	char ListID[30];		// used to Identify the specific list
 	int NodeCount;			// the amount of nodes to be created by the create list function
 	struct Node* head;		// should always point to the 0 index of the node array
 	struct Node* tail;		// should always point to the last index of the node array
-	struct Node* NodeArray;	// this is a pointer to the node array for this instance of NodeManager
+	struct Node* NodeArray;		// this is a pointer to the node array for this instance of NodeManager
 };
 
 
 /* Function Prototypes */
 
-struct NodeManager* CreateList		(int NodeCount, const char* ListID);					// creates a list (an instance of NodeManager) with the specified amount of nodes
-struct Node* InsertNodeAtEnd		(struct NodeManager*);									// inserts a node at the end of the list (to the right), this becomes the tail
-struct Node* InsertNodeAtBeginning	(struct NodeManager*);									// inserts a node at the beginning of the list (to the left), this becomes the head
-struct Node* InsertNodeAtPosition	(struct NodeManager*, int position);					// inserts a node at a given position which corrosponds to the node's index
-struct Node* FindNodeData			(struct NodeManager*, void* data, size_t DataSize);		// finds the first occurance of a node with specific data and returns the node
-bool DeleteList						(struct NodeManager*);									// deletes a given list and returns whether the operaiton was successful or not
-bool DeleteAllNodes					(struct NodeManager*);									// deletes all nodes
-bool DeleteNodeAtEnd				(struct NodeManager*);									// deletes the tail and returns whether the operaiton was successful or not
-bool DeleteNodeAtBeginning			(struct NodeManager*);									// deletes the head and returns whether the operaiton was successful or not
-bool DeleteNodeAtPosition			(struct NodeManager*, int position);					// deletes a node at a specific node and returns the success of the operation
-bool SetNodeData					(struct NodeManager*, int position, void* data); 		// sets the char data of a node at the specified position for the given list
-bool EmptyNodeData					(struct NodeManager*, int position);					// sets the char data of a given node to 0s for the given list
-bool SortList						(bool (*SortMethod) (struct NodeManager*), struct NodeManager*); // sorts a list based on the passed in algorithm 
-bool _AlphanumSortList				(struct NodeManager*);									// internal function, sorts list alphanumerically
-void _RefreshList					(struct NodeManager*);									// updates node addresses and positions
+struct NodeManager* CreateList		(int NodeCount, const char* ListID);				 // creates a list (an instance of NodeManager) with the specified amount of nodes
+struct Node* InsertNodeAtEnd		(struct NodeManager*);						 // inserts a node at the end of the list (to the right), this becomes the tail
+struct Node* InsertNodeAtBeginning	(struct NodeManager*);						 // inserts a node at the beginning of the list (to the left), this becomes the head
+struct Node* InsertNodeAtPosition	(struct NodeManager*, int position);				 // inserts a node at a given position which corrosponds to the node's index
+struct Node* FindNodeData		(struct NodeManager*, void* data, size_t DataSize);		 // finds the first occurance of a node with specific data and returns the node
+bool DeleteList				(struct NodeManager*);						 // deletes a given list and returns whether the operaiton was successful or not
+bool DeleteAllNodes			(struct NodeManager*);						 // deletes all nodes
+bool DeleteNodeAtEnd			(struct NodeManager*);						 // deletes the tail and returns whether the operaiton was successful or not
+bool DeleteNodeAtBeginning		(struct NodeManager*);						 // deletes the head and returns whether the operaiton was successful or not
+bool DeleteNodeAtPosition		(struct NodeManager*, int position);				 // deletes a node at a specific node and returns the success of the operation
+bool SetNodeData			(struct NodeManager*, int position, void* data); 		 // sets the char data of a node at the specified position for the given list
+bool EmptyNodeData			(struct NodeManager*, int position);				 // sets the char data of a given node to 0s for the given list
+bool SortList				(bool (*SortMethod) (struct NodeManager*), struct NodeManager*); // sorts a list based on the passed in algorithm 
+bool _AlphanumSortList			(struct NodeManager*);						 // internal function, sorts list alphanumerically
+void _RefreshList			(struct NodeManager*);						 // updates node addresses and positions
 
 
 /* Functions */
