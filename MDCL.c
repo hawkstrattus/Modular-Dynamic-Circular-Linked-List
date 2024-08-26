@@ -23,7 +23,7 @@ Examples: (Note that CreateList must always be used first and DeleteList must AL
 
 	Function:	SetNodeData(struct NodeManager*, int position, void* data);
 	Example:	int MyDataIWantToStoreInANode = 432
-				bool SuccessOnTrueFailiureOnFalse = SetNodeData(MyListManager, 7, &MyDataIWantToStoreInANode);
+			bool SuccessOnTrueFailiureOnFalse = SetNodeData(MyListManager, 7, &MyDataIWantToStoreInANode);
 
 	Function:	EmptyNodeData(struct NodeManager*, int position);
 	Example:	bool SuccessOnTrueFailiureOnFalse = EmptyNodeData(MyListManager, 7);
